@@ -1,0 +1,33 @@
+﻿name: Deploy to Local Machine
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build_and_deploy:
+    runs-on: self-hosted  # Usará o agente instalado na sua máquina
+    steps:
+      - name: Checkout do Código
+        uses: actions/checkout@v3
+
+      - name: Instalar .NET SDK 8.0
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restaurar Dependências
+        run: dotnet restore
+
+      - name: Compilar a Aplicação
+        run: dotnet build --configuration Release --no-restore
+
+      - name: Executar Testes Unitários
+        run: dotnet test NotifyMed.Tests/NotifyMed.Tests.csproj --no-restore --verbosity normal
+
+      - name: Construir e Subir o Docker Compose
+        run: |
+          docker-compose down
+          docker-compose up --build -d
+

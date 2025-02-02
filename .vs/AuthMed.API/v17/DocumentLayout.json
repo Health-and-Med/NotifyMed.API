@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\mathe\\OneDrive\\Documentos\\hackaton-fiap\\AuthMed.API\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9424C95A-4BFD-4FE8-A70B-D87A1437E611}|AuthMed.API\\AuthMed.API.csproj|c:\\users\\mathe\\onedrive\\documentos\\hackaton-fiap\\authmed.api\\authmed.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9424C95A-4BFD-4FE8-A70B-D87A1437E611}|AuthMed.API\\AuthMed.API.csproj|solutionrelative:authmed.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9424C95A-4BFD-4FE8-A70B-D87A1437E611}|AuthMed.API\\AuthMed.API.csproj|c:\\users\\mathe\\onedrive\\documentos\\hackaton-fiap\\authmed.api\\authmed.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9424C95A-4BFD-4FE8-A70B-D87A1437E611}|AuthMed.API\\AuthMed.API.csproj|solutionrelative:authmed.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\Documentos\\hackaton-fiap\\AuthMed.API\\AuthMed.API\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "AuthMed.API\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\Documentos\\hackaton-fiap\\AuthMed.API\\AuthMed.API\\appsettings.Development.json",
+              "RelativeToolTip": "AuthMed.API\\appsettings.Development.json",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAgwBYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-02T20:50:12.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\Documentos\\hackaton-fiap\\AuthMed.API\\AuthMed.API\\appsettings.json",
+              "RelativeDocumentMoniker": "AuthMed.API\\appsettings.json",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\Documentos\\hackaton-fiap\\AuthMed.API\\AuthMed.API\\appsettings.json",
+              "RelativeToolTip": "AuthMed.API\\appsettings.json",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAgwBYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-02T20:50:04.78Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

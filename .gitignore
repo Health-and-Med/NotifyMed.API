@@ -38,6 +38,8 @@ nuget.config
 *.swp
 *.db
 
+*.vsdx
+
 # Configurações de Ambiente e Segurança
 # appsettings.Development.json
 # appsettings.Local.json
@@ -56,3 +58,6 @@ docker-compose.override.override.yml
 Thumbs.db
 *.pid
 *.pid.lock
+*.vsidx
+/.vs/NotifyMed.API/v17/DocumentLayout.json
+/.vs/NotifyMed.API/v17/.futdcache.v2

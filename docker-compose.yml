@@ -1,19 +1,18 @@
-version: '3.8'
+﻿version: '3.8'
 
 services:
-  schedulesync_api:
+  notifymed_api:
     build:
       context: .
+      dockerfile: NotifyMed.API/Dockerfile
     container_name: notifymed_api
     ports:
-      - "5005:5005"
-    depends_on:
-      - db
+      - "5005:80"  # 🔹 Porta exposta corretamente
     networks:
-      - monitoring_network
+      - monitoring_network  # 🔹 Compartilha a mesma redes
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
 
 networks:
   monitoring_network:
-    external: true
+    external: true  # 🔹 Garante que todas as APIs se comuniquem
