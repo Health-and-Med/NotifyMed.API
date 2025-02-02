@@ -1,0 +1,58 @@
+# Binários, Builds e Objetos de Compilação
+bin/
+obj/
+*.exe
+*.dll
+*.pdb
+*.appx
+*.appxbundle
+*.msi
+*.nupkg
+*.snupkg
+
+# Configurações do Visual Studio e Rider
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Dependências e Pacotes
+node_modules/
+packages/
+*.nupkg
+*.snupkg
+project.lock.json
+project.assets.json
+nuget.config
+*.nuget.props
+*.nuget.targets
+
+# Logs e Debug
+*.log
+*.tlog
+*.cache
+*.pfx
+*.bak
+*.swp
+*.db
+
+# Configurações de Ambiente e Segurança
+# appsettings.Development.json
+# appsettings.Local.json
+# appsettings.Production.json
+# secrets.json
+# .env
+# *.key
+# *.pem
+
+# Diretórios do Docker
+docker-compose.override.yml
+docker-compose.override.override.yml
+
+# Cache do .NET e Configuração Global
+.DS_Store
+Thumbs.db
+*.pid
+*.pid.lock

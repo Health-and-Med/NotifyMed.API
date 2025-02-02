@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  schedulesync_api:
+    build:
+      context: .
+    container_name: notifymed_api
+    ports:
+      - "5005:5005"
+    depends_on:
+      - db
+    networks:
+      - monitoring_network
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+
+networks:
+  monitoring_network:
+    external: true
