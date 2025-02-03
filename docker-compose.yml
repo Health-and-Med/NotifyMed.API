@@ -11,7 +11,14 @@ services:
     networks:
       - monitoring_network  # 🔹 Compartilha a mesma redes
     environment:
-      - ASPNETCORE_ENVIRONMENT=Development
+      - RABBITMQ_HOST=rabbitmq
+      - RABBITMQ_PORT=5672
+      - EMAIL_HOST=smtp.gmail.com
+      - EMAIL_PORT=587
+      - EMAIL_USER=seu_email@gmail.com
+      - EMAIL_PASSWORD=sua_senha
+    depends_on:
+      - rabbitmq
 
 networks:
   monitoring_network:

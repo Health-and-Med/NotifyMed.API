@@ -16,5 +16,10 @@
 	  <ProjectReference Include="..\NotifyMed.Domain\NotifyMed.Domain.csproj" />
 	</ItemGroup>
 
+
+	<ItemGroup>
+	  <Folder Include="Repositories\" />
+	</ItemGroup>
+
 </Project>
 

@@ -1,7 +1,4 @@
 ﻿using NotifyMed.Application.Services;
-using NotifyMed.Domain.Interfaces;
-using NotifyMed.Infrastructure.Repositories;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Npgsql;
@@ -15,9 +12,13 @@ var builder = WebApplication.CreateBuilder(args);
 string connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
     ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 
-builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddScoped<IDatabaseInitializer, DatabaseInitializer>();
-builder.Services.AddScoped<IUserService, UserService>();
+
+
+// Adiciona serviços do SendGrid
+builder.Services.AddSingleton<EmailService>();
+
+// Adiciona consumidor do RabbitMQ
+builder.Services.AddHostedService<RabbitMQConsumer>();
 
 // 🔹 Conexão com o banco de dados PostgreSQL
 builder.Services.AddScoped<IDbConnection>(sp => new NpgsqlConnection(connectionString));
@@ -71,12 +72,6 @@ builder.Services.AddSwaggerGen(c =>
 
 var app = builder.Build();
 
-// 🔹 Inicializar banco de dados (caso necessário)
-using (var scope = app.Services.CreateScope())
-{
-    var dbInitializer = scope.ServiceProvider.GetRequiredService<IDatabaseInitializer>();
-    dbInitializer.Initialize();
-}
 
 // 🔹 Configuração do Swagger
 if (app.Environment.IsDevelopment())
