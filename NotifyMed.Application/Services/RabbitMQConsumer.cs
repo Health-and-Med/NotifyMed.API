@@ -64,8 +64,8 @@ namespace NotifyMed.Application.Services
                 await _emailService.SendEmailAsync(
                     emailRequest.DoctorEmail,
                     emailRequest.DoctorName,
-                    "Health&Med - Nova consulta agendada",
-                    $"Olá, Dr. {emailRequest.DoctorName}! Você tem uma nova consulta marcada! \nPaciente: {emailRequest.PatientName}.\nData e horário: {emailRequest.Date} às {emailRequest.Time}."
+                    "Health&Med - Atualização Consulta",
+                    $"{emailRequest.Body}"
                 );
             };
 
@@ -88,8 +88,6 @@ namespace NotifyMed.Application.Services
     {
         public string DoctorEmail { get; set; }
         public string DoctorName { get; set; }
-        public string PatientName { get; set; }
-        public string Date { get; set; }
-        public string Time { get; set; }
+        public string Body { get; set; }
     }
 }
