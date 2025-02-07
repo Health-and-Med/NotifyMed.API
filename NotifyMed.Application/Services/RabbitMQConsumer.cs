@@ -63,10 +63,20 @@ namespace NotifyMed.Application.Services
 
                 await _emailService.SendEmailAsync(
                     emailRequest.DoctorEmail,
-                    emailRequest.DoctorName,
+                    emailRequest.DoctorEmail,
                     "Health&Med - Atualização Consulta",
                     $"{emailRequest.Body}"
                 );
+
+                if (!string.IsNullOrEmpty(emailRequest.PatientEmail))
+                {
+                    await _emailService.SendEmailAsync(
+                    emailRequest.DoctorEmail,
+                    emailRequest.PatientEmail,
+                    "Health&Med - Atualização Consulta",
+                    $"{emailRequest.Body}"
+                );
+                }
             };
 
             _channel.BasicConsume(queue: "new_appointment",
@@ -87,7 +97,7 @@ namespace NotifyMed.Application.Services
     public class EmailNotificationRequest
     {
         public string DoctorEmail { get; set; }
-        public string DoctorName { get; set; }
+        public string PatientEmail { get; set; }
         public string Body { get; set; }
     }
 }
