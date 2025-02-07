@@ -23,21 +23,21 @@ namespace NotifyMed.Application.Services
         {
             _emailService = emailService;
 
-            var factory = new ConnectionFactory()
-            {
-                HostName = "rabbitmq",
-                Port = 5672,
-                UserName = "guest",
-                Password = "guest"
-            };
-
             //var factory = new ConnectionFactory()
             //{
-            //    HostName = "localhost",
+            //    HostName = "rabbitmq",
             //    Port = 5672,
             //    UserName = "guest",
             //    Password = "guest"
             //};
+
+            var factory = new ConnectionFactory()
+            {
+                HostName = "localhost",
+                Port = 5672,
+                UserName = "guest",
+                Password = "guest"
+            };
 
             _connection = factory.CreateConnection();
             _channel = _connection.CreateModel();
@@ -62,7 +62,7 @@ namespace NotifyMed.Application.Services
                 Console.WriteLine($"[✔] Recebida notificação de consulta para: {emailRequest.DoctorEmail}");
 
                 await _emailService.SendEmailAsync(
-                    emailRequest.DoctorEmail,
+                    "matheusfonsecamfo@gmail.com",
                     emailRequest.DoctorEmail,
                     "Health&Med - Atualização Consulta",
                     $"{emailRequest.Body}"
