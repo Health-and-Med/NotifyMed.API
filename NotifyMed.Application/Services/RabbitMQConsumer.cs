@@ -60,7 +60,8 @@ namespace NotifyMed.Application.Services
                 var emailRequest = JsonSerializer.Deserialize<EmailNotificationRequest>(message);
 
                 Console.WriteLine($"[✔] Recebida notificação de consulta para: {emailRequest.DoctorEmail}");
-
+                emailRequest.Body = emailRequest.Body.Replace("\r", "<br>");
+                emailRequest.Body = emailRequest.Body.Replace("\n", "<br>");
                 await _emailService.SendEmailAsync(
                     "matheusfonsecamfo@gmail.com",
                     emailRequest.DoctorEmail,
