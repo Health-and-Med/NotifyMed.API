@@ -23,21 +23,21 @@ namespace NotifyMed.Application.Services
         {
             _emailService = emailService;
 
-            //var factory = new ConnectionFactory()
-            //{
-            //    HostName = "rabbitmq",
-            //    Port = 5672,
-            //    UserName = "guest",
-            //    Password = "guest"
-            //};
-
             var factory = new ConnectionFactory()
             {
-                HostName = "localhost",
+                HostName = "rabbitmq",
                 Port = 5672,
                 UserName = "guest",
                 Password = "guest"
             };
+
+            //var factory = new ConnectionFactory()
+            //{
+            //    HostName = "localhost",
+            //    Port = 5672,
+            //    UserName = "guest",
+            //    Password = "guest"
+            //};
 
             _connection = factory.CreateConnection();
             _channel = _connection.CreateModel();
