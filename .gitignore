@@ -61,3 +61,6 @@ Thumbs.db
 *.vsidx
 /.vs/NotifyMed.API/v17/DocumentLayout.json
 /.vs/NotifyMed.API/v17/.futdcache.v2
+/.vs/ProjectEvaluation
+/.vs/NotifyMed.API/DesignTimeBuild/.dtbcache.v2
+/.vs/NotifyMed.API/v17/DocumentLayout.backup.json
